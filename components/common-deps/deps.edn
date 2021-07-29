@@ -1,0 +1,6 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.3"}
+        metosin/malli {:mvn/version "0.5.1"}
+        mount/mount {:mvn/version "0.1.16"}}
+ :aliases {:test {:extra-paths ["test"]
+                  :extra-deps {}}}}

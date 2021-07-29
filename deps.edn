@@ -1,8 +1,27 @@
-{:aliases  {:dev {:extra-paths ["development/src"]
+{:aliases  {:dev {:extra-paths ["development/src"
+                                "components/mongo/src"
+                                "components/mongo/resources"
+                                "components/env/src"
+                                "components/env/resources"
+                                "components/log/src"
+                                "components/log/resources"
+                                "components/common-deps/src"
+                                "components/common-deps/resources"
+                                "components/postgres/src"
+                                "components/postgres/resources"]
                   :extra-deps {org.clojure/clojure {:mvn/version "1.10.1"}
-                               org.clojure/tools.deps.alpha {:mvn/version "0.12.985"}}}
+                               org.clojure/tools.deps.alpha {:mvn/version "0.12.985"}
+                               blog/mongo {:local/root "components/mongo"}
+                               blog/env {:local/root "components/env"}
+                               blog/log {:local/root "components/log"}
+                               blog/common-deps {:local/root "components/common-deps"}
+                               blog/postgres {:local/root "components/postgres"}}}
 
-            :test {:extra-paths []}
+            :test {:extra-paths ["components/mongo/test"
+                                 "components/env/test"
+                                 "components/log/test"
+                                 "components/postgres/test"]
+                   :extra-deps {org.clojure/test.check {:mvn/version "1.1.0"}}}
 
             :poly {:main-opts ["-m" "polylith.clj.core.poly-cli.core"]
                    :extra-deps {polyfy/polylith

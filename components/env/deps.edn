@@ -1,0 +1,4 @@
+{:paths ["src" "resources"]
+ :deps {cprop/cprop {:mvn/version "0.1.18"}}
+ :aliases {:test {:extra-paths ["test"]
+                  :extra-deps {}}}}
